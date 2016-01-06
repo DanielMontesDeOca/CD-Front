@@ -9,7 +9,7 @@ var LoginForm = React.createClass({
   },
 
   render() {
-    return (<div className='dl-login-form'>
+    return (<div className='login-form'>
       <h1>Login</h1>
       <div><Link to='dashboard'>Login</Link></div>
       <div><Link to='register'>Register</Link></div>

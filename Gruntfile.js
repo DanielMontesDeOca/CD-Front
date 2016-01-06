@@ -123,6 +123,11 @@ module.exports = function main(grunt) {
           }
         }
       }
+    },
+    nightwatch: {
+      options: {
+
+      }
     }
   });
 
@@ -133,6 +138,7 @@ module.exports = function main(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-browser-sync');
+  grunt.loadNpmTasks('grunt-nightwatch');
 
   grunt.registerTask('default', '', function fn() {
     var tasks = ['less:prod', 'browserify:prod', 'uglify', 'concurrent'];

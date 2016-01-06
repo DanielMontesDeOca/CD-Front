@@ -3,3 +3,5 @@ assets/js/app.js
 node_modules
 .pems
 npm-debug.log
+selenium-debug.log
+reports
