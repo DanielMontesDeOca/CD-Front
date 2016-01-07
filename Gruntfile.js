@@ -160,6 +160,11 @@ module.exports = function main(grunt) {
     grunt.task.run(tasks);
   });
 
+  grunt.registerTask('test', '', function fn() {
+    var tasks = ['build', 'browserSync', 'nightwatch'];
+    grunt.task.run(tasks);
+  });
+
   grunt.event.on('watch', function fn(action, filepath, target) {
     grunt.log.writeln(target + ': ' + filepath + ' has ' + action);
   });
