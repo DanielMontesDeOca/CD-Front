@@ -38,7 +38,7 @@
         "browserName" : "phantomjs",
         "javascriptEnabled" : true,
         "acceptSslCerts" : true,
-        "phantomjs.binary.path" : "./node_modules/phantomjs2/lib/phantom/bin/phantomjs",
+        "phantomjs.binary.path" : "./node_modules/phantomjs/lib/phantom/bin/phantomjs",
         "phantomjs.cli.args": "--webdriver=5558 --webdriver-selenium-grid-hub=http://localhost:4444"
       }
     }

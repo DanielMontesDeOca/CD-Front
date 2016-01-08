@@ -1,3 +1,3 @@
 #!/bin/bash
 
-grunt test
+grunt test-headless

@@ -18,17 +18,13 @@ module.exports = function main(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    concurrent: {
-      server: ['nodemon', 'watch'],
+    express: {
       options: {
-        logConcurrentOutput: true
-      }
-    },
-    nodemon: {
-      prod: {
-        script: 'server.js',
+        port: DEFAULT_PORT
+      },
+      test: {
         options: {
-          ignore: ['node_modules/**']
+          script: 'server.js'
         }
       }
     },
@@ -132,7 +128,7 @@ module.exports = function main(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-concurrent');
-  grunt.loadNpmTasks('grunt-nodemon');
+  grunt.loadNpmTasks('grunt-express-server');
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
@@ -162,6 +158,11 @@ module.exports = function main(grunt) {
 
   grunt.registerTask('test', '', function fn() {
     var tasks = ['build', 'browserSync', 'nightwatch'];
+    grunt.task.run(tasks);
+  });
+
+  grunt.registerTask('test-headless', '', function fn() {
+    var tasks = ['build', 'express:test', 'nightwatch:phantomjs'];
     grunt.task.run(tasks);
   });
 
